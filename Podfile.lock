@@ -1,0 +1,15 @@
+PODS:
+  - Firebase (2.5.1)
+  - KGNAutoLayout (1.0)
+
+DEPENDENCIES:
+  - Firebase (>= 2.5.1)
+  - KGNAutoLayout
+
+SPEC CHECKSUMS:
+  Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
+  KGNAutoLayout: 4664e0e67127c5b4c6f6a7b8b189781fe637d039
+
+PODFILE CHECKSUM: fc3f20b1d0cbeb994ee055b37c5271e55b6d4f2e
+
+COCOAPODS: 1.0.0
