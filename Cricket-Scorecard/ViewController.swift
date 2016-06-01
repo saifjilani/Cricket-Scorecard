@@ -13,8 +13,11 @@ class ViewController: UIViewController {
     
     //labels
     var teamOneLabel = UILabel()
+    var teamOneScore = UILabel()
     var teamTwoLabel = UILabel()
+    var teamTwoScore = UILabel()
     var oversLabel = UILabel()
+    var overs = UILabel()
     var runsLabel = UILabel()
     var boundaryLabel = UILabel()
     var extrasLabel = UILabel()
@@ -23,6 +26,7 @@ class ViewController: UIViewController {
     var byeLabel = UILabel()
     
     //buttons
+    var dotBall = UIButton(type: .System)
     var oneRuns = UIButton(type: .System)
     var twoRuns = UIButton(type: .System)
     var threeRuns = UIButton(type: .System)
@@ -47,11 +51,23 @@ class ViewController: UIViewController {
         teamOneLabel.pinToTopEdgeOfSuperview(offset: 20)
         teamOneLabel.pinToLeftEdgeOfSuperview(offset: 80)
         
+        teamOneScore.textAlignment = NSTextAlignment.Center
+        teamOneScore.text = "256"
+        self.view.addSubview(teamOneScore)
+        teamOneScore.centerVerticallyToItem(teamOneLabel)
+        teamOneScore.pinLeftEdgeToLeftEdgeOfItem(teamOneLabel, offset: 80)
+        
         teamTwoLabel.textAlignment = .Center
         teamTwoLabel.text = "Team 2:"
         self.view.addSubview(teamTwoLabel)
         teamTwoLabel.pinTopEdgeToTopEdgeOfItem(teamOneLabel, offset: 50)
         teamTwoLabel.pinToLeftEdgeOfSuperview(offset: 80)
+        
+        teamTwoScore.textAlignment = NSTextAlignment.Center
+        teamTwoScore.text = "147"
+        self.view.addSubview(teamTwoScore)
+        teamTwoScore.centerVerticallyToItem(teamTwoLabel)
+        teamTwoScore.pinLeftEdgeToLeftEdgeOfItem(teamTwoLabel, offset: 80)
         
         oversLabel.textAlignment = .Center
         oversLabel.text = "Overs:"
@@ -59,19 +75,33 @@ class ViewController: UIViewController {
         oversLabel.pinTopEdgeToTopEdgeOfItem(teamTwoLabel, offset: 50)
         oversLabel.pinToLeftEdgeOfSuperview(offset: 80)
         
+        overs.textAlignment = NSTextAlignment.Center
+        overs.text = "0.5"
+        self.view.addSubview(overs)
+        overs.centerVerticallyToItem(oversLabel)
+        overs.pinLeftEdgeToLeftEdgeOfItem(oversLabel, offset: 80)
+
         runsLabel.textAlignment = .Center
         runsLabel.text = "Runs:"
         self.view.addSubview(runsLabel)
         runsLabel.pinTopEdgeToTopEdgeOfItem(oversLabel, offset: 50)
         runsLabel.pinToLeftEdgeOfSuperview(offset: 80)
-        
+
+        dotBall.setTitle("0", forState: .Normal)
+        dotBall.layer.borderWidth = 1.0
+        dotBall.layer.borderColor = UIColor.blueColor().CGColor
+        self.view.addSubview(dotBall)
+        dotBall.pinLeftEdgeToLeftEdgeOfItem(runsLabel, offset: 50)
+        dotBall.centerVerticallyToItem(runsLabel)
+        dotBall.addTarget(self, action: "addRuns:", forControlEvents: .TouchUpInside)
+
         oneRuns.setTitle("1", forState: .Normal)
         oneRuns.layer.borderWidth = 1.0
         oneRuns.layer.borderColor = UIColor.blueColor().CGColor
         self.view.addSubview(oneRuns)
-        oneRuns.pinLeftEdgeToLeftEdgeOfItem(runsLabel, offset: 50)
+        oneRuns.pinLeftEdgeToLeftEdgeOfItem(dotBall, offset: 50)
         oneRuns.centerVerticallyToItem(runsLabel)
-        
+
         twoRuns.setTitle("2", forState: .Normal)
         twoRuns.layer.borderWidth = 1.0
         twoRuns.layer.borderColor = UIColor.blueColor().CGColor
@@ -162,9 +192,14 @@ class ViewController: UIViewController {
         self.view.addSubview(endMatch)
         endMatch.pinToLeftEdgeOfSuperview(offset: 80)
         endMatch.pinTopEdgeToTopEdgeOfItem(editLastBall, offset: 40)
-        
-        
     }
+    
+    
+    func addRuns(sender: UIButton!)
+    {
+        print("button tapped")
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
