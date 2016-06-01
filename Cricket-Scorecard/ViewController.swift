@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         teamOneLabel.pinToLeftEdgeOfSuperview(offset: 80)
         
         teamOneScore.textAlignment = NSTextAlignment.Center
-        teamOneScore.text = "256"
+        teamOneScore.text = "0"
         self.view.addSubview(teamOneScore)
         teamOneScore.centerVerticallyToItem(teamOneLabel)
         teamOneScore.pinLeftEdgeToLeftEdgeOfItem(teamOneLabel, offset: 80)
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
         oversLabel.pinToLeftEdgeOfSuperview(offset: 80)
         
         overs.textAlignment = NSTextAlignment.Center
-        overs.text = "0.5"
+        overs.text = "0.0"
         self.view.addSubview(overs)
         overs.centerVerticallyToItem(oversLabel)
         overs.pinLeftEdgeToLeftEdgeOfItem(oversLabel, offset: 80)
@@ -93,7 +93,7 @@ class ViewController: UIViewController {
         self.view.addSubview(dotBall)
         dotBall.pinLeftEdgeToLeftEdgeOfItem(runsLabel, offset: 50)
         dotBall.centerVerticallyToItem(runsLabel)
-        dotBall.addTarget(self, action: "addRuns:", forControlEvents: .TouchUpInside)
+        dotBall.addTarget(self, action: "playNextBall:", forControlEvents: .TouchUpInside)
 
         oneRuns.setTitle("1", forState: .Normal)
         oneRuns.layer.borderWidth = 1.0
@@ -101,6 +101,7 @@ class ViewController: UIViewController {
         self.view.addSubview(oneRuns)
         oneRuns.pinLeftEdgeToLeftEdgeOfItem(dotBall, offset: 50)
         oneRuns.centerVerticallyToItem(runsLabel)
+        oneRuns.addTarget(self, action: "playNextBall:", forControlEvents: .TouchUpInside)
 
         twoRuns.setTitle("2", forState: .Normal)
         twoRuns.layer.borderWidth = 1.0
@@ -194,10 +195,30 @@ class ViewController: UIViewController {
         endMatch.pinTopEdgeToTopEdgeOfItem(editLastBall, offset: 40)
     }
     
-    
-    func addRuns(sender: UIButton!)
+    func playNextBall(sender: UIButton!)
     {
-        print("button tapped")
+        print("play next ball")
+        let runsScoredOnBall = (sender.titleLabel!.text! as NSString).intValue
+        addRuns(runsScoredOnBall)
+        incrementBall()
+    }
+    
+    func incrementBall()
+    {
+        var nextBall = (overs.text! as NSString).doubleValue
+        nextBall += 0.1
+        if ((nextBall * 10) % 10 == 6)
+        {
+            nextBall += 0.4
+        }
+        overs.text = String(nextBall)
+    }
+    
+    func addRuns(runsScoredOnBall: Int32)
+    {
+        var totalScore = (teamOneScore.text! as NSString).intValue
+        totalScore += runsScoredOnBall
+        teamOneScore.text = String(totalScore)
     }
     
     
