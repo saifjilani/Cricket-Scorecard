@@ -184,15 +184,17 @@ class ViewController: UIViewController {
         
 //      MARK: Functionality
         //RUNS
-        dotBall.addTarget(self, action: "playNextBall:", forControlEvents: .TouchUpInside)
-        oneRuns.addTarget(self, action: "playNextBall:", forControlEvents: .TouchUpInside)
-        twoRuns.addTarget(self, action: "playNextBall:", forControlEvents: .TouchUpInside)
-        threeRuns.addTarget(self, action: "playNextBall:", forControlEvents: .TouchUpInside)
-        fourRuns.addTarget(self, action: "playNextBall:", forControlEvents: .TouchUpInside)
-        sixRuns.addTarget(self, action: "playNextBall:", forControlEvents: .TouchUpInside)
+        dotBall.addTarget(self, action: "runOnBall:", forControlEvents: .TouchUpInside)
+        oneRuns.addTarget(self, action: "runOnBall:", forControlEvents: .TouchUpInside)
+        twoRuns.addTarget(self, action: "runOnBall:", forControlEvents: .TouchUpInside)
+        threeRuns.addTarget(self, action: "runOnBall:", forControlEvents: .TouchUpInside)
+        fourRuns.addTarget(self, action: "runOnBall:", forControlEvents: .TouchUpInside)
+        sixRuns.addTarget(self, action: "runOnBall:", forControlEvents: .TouchUpInside)
+
+        out.addTarget(self, action: "wicket:", forControlEvents: .TouchUpInside)
     }
     
-    func playNextBall(sender: UIButton!){
+    func runOnBall(sender: UIButton!){
         print("play next ball")
         let runsScoredOnBall = (sender.titleLabel!.text! as NSString).intValue
         addRuns(runsScoredOnBall)
@@ -203,7 +205,12 @@ class ViewController: UIViewController {
         }
         incrementBall()
     }
-    
+
+//    func wicket(sender: UIButton!){
+//        var totalWickets = (teamOneScore)
+//        incrementBall()
+//    }
+
     func incrementBall(){
         let currentBall = (overs.text! as NSString).doubleValue
         var nextBall = currentBall + 0.1
