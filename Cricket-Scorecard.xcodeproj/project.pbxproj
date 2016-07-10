@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4583CE69D8CB03827E1FFFBF /* Pods_Cricket_Scorecard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB7781CFDF42BEA5D5D3AA4 /* Pods_Cricket_Scorecard.framework */; };
 		FE8326DD1CEC131E00EB2F34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8326DC1CEC131E00EB2F34 /* AppDelegate.swift */; };
-		FE8326DF1CEC131E00EB2F34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8326DE1CEC131E00EB2F34 /* ViewController.swift */; };
+		FE8326DF1CEC131E00EB2F34 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8326DE1CEC131E00EB2F34 /* MatchViewController.swift */; };
 		FE8326E21CEC131E00EB2F34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE8326E01CEC131E00EB2F34 /* Main.storyboard */; };
 		FE8326E41CEC131F00EB2F34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE8326E31CEC131F00EB2F34 /* Assets.xcassets */; };
 		FE8326E71CEC131F00EB2F34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE8326E51CEC131F00EB2F34 /* LaunchScreen.storyboard */; };
@@ -22,7 +22,7 @@
 		DBB7781CFDF42BEA5D5D3AA4 /* Pods_Cricket_Scorecard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cricket_Scorecard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8326D91CEC131E00EB2F34 /* Cricket-Scorecard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cricket-Scorecard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8326DC1CEC131E00EB2F34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FE8326DE1CEC131E00EB2F34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FE8326DE1CEC131E00EB2F34 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		FE8326E11CEC131E00EB2F34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE8326E31CEC131F00EB2F34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE8326E61CEC131F00EB2F34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				FE8326DC1CEC131E00EB2F34 /* AppDelegate.swift */,
-				FE8326DE1CEC131E00EB2F34 /* ViewController.swift */,
+				FE8326DE1CEC131E00EB2F34 /* MatchViewController.swift */,
 				FE8326E01CEC131E00EB2F34 /* Main.storyboard */,
 				FE8326E31CEC131F00EB2F34 /* Assets.xcassets */,
 				FE8326E51CEC131F00EB2F34 /* LaunchScreen.storyboard */,
@@ -214,7 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE8326DF1CEC131E00EB2F34 /* ViewController.swift in Sources */,
+				FE8326DF1CEC131E00EB2F34 /* MatchViewController.swift in Sources */,
 				FE8326DD1CEC131E00EB2F34 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
